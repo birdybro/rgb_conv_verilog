@@ -1,7 +1,7 @@
 # rgb_conv_verilog
 different rgb colorspace conversion techniques from rgb_xxx to rgb_888 for mister
 
-## rgb_555 to rgb_888 conversion with verilog/systemverilog
+## rgb_555 to rgb_888 conversion with verilog/systemverilog using linear interpolation
 
 ```sv
   logic [4:0] r_555, g_555, b_555;
