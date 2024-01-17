@@ -20,7 +20,7 @@ this one's the easiest, there are no issues with scaling the colors up since it 
   assign VGA_B = b_8;
 ```
 
-## rgb_333 to rgb_888 conversion with verilog/systemverilog using a pre-generated lookup table
+## rgb_333 to rgb_888 conversion with verilog/systemverilog using a generated LUT
 
 add rgb333_to_rgb888.* files to your project
 
