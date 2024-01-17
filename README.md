@@ -20,6 +20,34 @@ this one's the easiest, there are no issues with scaling the colors up since it 
   assign VGA_B = b_8;
 ```
 
+## rgb_333 to rgb_888 conversion with verilog/systemverilog using a pre-generated lookup table
+
+add rgb333_to_rgb888.* files to your project
+
+for includes in qip:
+
+```ini
+set_global_assignment -name QIP_FILE rtl/rgb333_to_rgb888.qip
+```
+
+and then add code to instantiate the module:
+
+```sv
+  logic [2:0] r_3, g_3, b_3;
+  logic [7:0] r_8, g_8, b_8;
+
+  rgb333_to_rgb888 rgb333_to_rgb888
+  (
+    .address({r_3, g_3, b_3}),
+    .clock(clk_vid), // video clock, not pixel clock!
+    .q({r_8, g_8, b_8)
+  );
+
+  assign VGA_R = r_8;
+  assign VGA_G = g_8;
+  assign VGA_B = b_8;  
+```
+
 ## rgb_555 to rgb_888 conversion with verilog/systemverilog using linear interpolation
 
 ```sv
